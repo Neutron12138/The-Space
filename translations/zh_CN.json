@@ -1,0 +1,21 @@
+{
+	"locale" : "zh_CN",
+	"messages" : {
+		"UI_CONFIRM" : "确认",
+		"UI_CANCEL" : "取消",
+		
+		"UI_ALERT" : "警报！",
+		"UI_ERROR" : "错误！",
+		"UI_WARNING" : "警告！",
+		"UI_PLEASE_CONFIRM" : "请确认...",
+		
+		"UI_NEW_GAME" : "新建游戏",
+		"UI_LOAD_GAME" : "加载游戏",
+		"UI_GAME_SETTINGS" : "游戏设置",
+		"UI_EXIT_GAME" : "退出游戏",
+		"UI_MODS" : "Mods",
+		"UI_HELP" : "帮助",
+		
+		"UI_EXIT_GAME_OR_NOT" : "是否退出游戏？"
+	}
+}

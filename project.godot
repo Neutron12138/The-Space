@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="The Space"
+config/tags=PackedStringArray("project")
+run/main_scene="res://interfaces/start_menu.tscn"
+run/main_loop_type="Main"
+config/features=PackedStringArray("4.2", "Mobile")
+config/icon="res://assets/godot.svg"
+
+[autoload]
+
+Global="*res://global/global.gd"
+Resources="*res://global/resources.gd"
+Constants="*res://global/constants.gd"
+
+[display]
+
+window/subwindows/embed_subwindows=false
+
+[rendering]
+
+renderer/rendering_method="mobile"
