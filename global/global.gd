@@ -6,7 +6,7 @@ func _ready() -> void:
 	get_tree().auto_accept_quit = false
 	get_tree().root.close_requested.connect(func(): exit_game_or_not())
 	
-	load_translation.call_deferred("res://translations/zh_CN.json")
+	load_translations.call_deferred("res://translations/")
 	get_tree().reload_current_scene.call_deferred()
 
 
@@ -33,14 +33,15 @@ func make_alert(text : String, title : String = "UI_ALERT") -> void:
 
 func make_error(text : String) -> void:
 	make_alert(text, "UI_ERROR")
+	push_error(text)
 
 func make_warning(text : String) -> void:
 	make_alert(text, "UI_WARNING")
+	push_warning(text)
 
 
 
 func load_translation(path : String) -> Error:
-	var ts := TranslationServer
 	var file : FileAccess = FileAccess.open(path, FileAccess.READ)
 	if not is_instance_valid(file):
 		make_error("Unable to open translation file: \"" + path + "\".")
@@ -57,18 +58,52 @@ func load_translation(path : String) -> Error:
 	if not dict.has("locale"):
 		make_error("Unable to find key \"locale\" in this translation file (\"" + path + "\").")
 		return ERR_PARSE_ERROR
+	if not dict["locale"] is String:
+		make_error("The key \"locale\" in the translation file (\"" + path + "\") must be a String.")
+		return ERR_PARSE_ERROR
 	
 	if not dict.has("messages"):
 		make_error("Unable to find key \"messages\" in this translation file (\"" + path + "\").")
 		return ERR_PARSE_ERROR
+	if not dict["messages"] is Dictionary:
+		make_error("The key \"messages\" in the translation file (\"" + path + "\") must be a JSON object (Dictionary in GDScript).")
+		return ERR_PARSE_ERROR
 	
 	var trans : Translation = Translation.new()
 	trans.locale = dict["locale"]
-	for i in dict["messages"]:
-		trans.add_message(i, dict["messages"][i])
+	for src in dict["messages"]:
+		var xlated : Variant = dict["messages"][src]
+		if not xlated is String:
+			make_error("The translated message (src: \"" + str(src) +
+			"\", xlated: \"" + str(xlated) +
+			"\") in the \"messages\" key of the translation file (\"" + path + 
+			"\") must be a String.")
+			return ERR_PARSE_ERROR
+		
+		trans.add_message(src, xlated)
 	
-	ts.add_translation(trans)
+	TranslationServer.add_translation(trans)
 	return OK
+
+func load_translations(path : String) -> Error:
+	if not path.ends_with("/") or path.ends_with("\\"):
+		path += "/"
+	
+	var dir : DirAccess = DirAccess.open(path)
+	if not is_instance_valid(dir):
+		make_error("Unable to open translation file directory: \"" + path + "\".")
+		return ERR_FILE_CANT_OPEN
+	
+	var err : Error = OK
+	dir.list_dir_begin()
+	var filename : String = dir.get_next()
+	while filename != "":
+		if not dir.current_is_dir():
+			var e : Error = load_translation(path + filename)
+			if e != OK:
+				err = e
+		filename = dir.get_next()
+	return err
 
 
 
