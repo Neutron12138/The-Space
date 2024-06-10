@@ -8,3 +8,4 @@ const AlertDialogScene : PackedScene = preload("res://interfaces/alert_dialog.ts
 const ConfirmationDialogScene : PackedScene = preload("res://interfaces/confirmation_dialog.tscn")
 
 const StartMenuScene : PackedScene = preload("res://interfaces/start_menu.tscn")
+const OthersScene : PackedScene = preload("res://interfaces/others.tscn")

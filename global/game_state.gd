@@ -21,7 +21,9 @@ class Loader extends ResourceFormatLoader:
 
 class Saver extends ResourceFormatSaver:
 	func _get_recognized_extensions(resource : Resource) -> PackedStringArray:
-		return [FILE_EXTENSION]
+		if resource is GameState:
+			return [FILE_EXTENSION]
+		return []
 	
 	func _recognize(resource: Resource) -> bool:
 		return resource is GameState

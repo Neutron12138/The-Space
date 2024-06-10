@@ -49,11 +49,11 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "TEXT_UI_GAME_SETTINGS"
 
-[node name="help" type="Button" parent="HBoxContainer/buttons"]
+[node name="others" type="Button" parent="HBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "TEXT_UI_HELP"
+text = "TEXT_UI_OTHERS"
 
 [node name="exit_game" type="Button" parent="HBoxContainer/buttons"]
 layout_mode = 2
@@ -69,5 +69,5 @@ size_flags_stretch_ratio = 2.0
 [connection signal="pressed" from="HBoxContainer/buttons/load_game" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="HBoxContainer/buttons/mods" to="." method="_on_mods_pressed"]
 [connection signal="pressed" from="HBoxContainer/buttons/game_settings" to="." method="_on_game_settings_pressed"]
-[connection signal="pressed" from="HBoxContainer/buttons/help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/others" to="." method="_on_others_pressed"]
 [connection signal="pressed" from="HBoxContainer/buttons/exit_game" to="." method="_on_exit_game_pressed"]

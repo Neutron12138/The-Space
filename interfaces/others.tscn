@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu2cou5ls5e3m"]
+
+[ext_resource type="Script" path="res://interfaces/others.gd" id="1_v25rg"]
+[ext_resource type="Texture2D" uid="uid://burhsp8qn6fuv" path="res://assets/godot.svg" id="2_8ytyf"]
+
+[node name="Others" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v25rg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="back" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TEXT_UI_BACK"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 9.0
+theme_override_font_sizes/font_size = 20
+text = "TEXT_UI_OTHERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="TEXT_UI_HELP" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TEXT_UI_ABOUT" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="text" type="Label" parent="TabContainer/TEXT_UI_ABOUT"]
+layout_mode = 2
+text = "TEXT_UI_ABOUT_TEXT"
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/TEXT_UI_ABOUT"]
+layout_mode = 2
+texture = ExtResource("2_8ytyf")
+stretch_mode = 2
+
+[node name="TEXT_UI_LICENSE_GAME" type="ScrollContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="text" type="Label" parent="TabContainer/TEXT_UI_LICENSE_GAME"]
+layout_mode = 2
+
+[node name="TEXT_UI_LICENSE_GODOT" type="ScrollContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="text" type="Label" parent="TabContainer/TEXT_UI_LICENSE_GODOT"]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/back" to="." method="_on_back_pressed"]

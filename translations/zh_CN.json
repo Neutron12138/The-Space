@@ -15,9 +15,18 @@
 		"TEXT_UI_LOAD_GAME" : "加载游戏",
 		"TEXT_UI_MODS" : "Mods",
 		"TEXT_UI_GAME_SETTINGS" : "游戏设置",
-		"TEXT_UI_HELP" : "帮助",
+		"TEXT_UI_OTHERS" : "其他",
 		"TEXT_UI_EXIT_GAME" : "退出游戏",
 		
-		"TEXT_UI_EXIT_GAME_OR_NOT" : "是否退出游戏？"
+		"TEXT_UI_BACK" : "返回",
+		
+		"TEXT_UI_HELP" : "帮助",
+		"TEXT_UI_ABOUT" : "关于",
+		
+		"TEXT_UI_EXIT_GAME_OR_NOT" : "是否退出游戏？",
+		
+		"TEXT_UI_ABOUT_TEXT" : "作者：Neutron12138\n引擎：Godot Engine",
+		"TEXT_UI_LICENSE_GODOT" : "Godot Engine 许可证",
+		"TEXT_UI_LICENSE_GAME" : "本游戏许可证"
 	}
 }
