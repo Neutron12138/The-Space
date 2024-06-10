@@ -1,21 +1,23 @@
 {
 	"locale" : "zh_CN",
 	"messages" : {
-		"UI_CONFIRM" : "确认",
-		"UI_CANCEL" : "取消",
+		"TEXT_GAME_NAME" : "The Space",
 		
-		"UI_ALERT" : "警报！",
-		"UI_ERROR" : "错误！",
-		"UI_WARNING" : "警告！",
-		"UI_PLEASE_CONFIRM" : "请确认...",
+		"TEXT_UI_CONFIRM" : "确认",
+		"TEXT_UI_CANCEL" : "取消",
 		
-		"UI_NEW_GAME" : "新建游戏",
-		"UI_LOAD_GAME" : "加载游戏",
-		"UI_GAME_SETTINGS" : "游戏设置",
-		"UI_EXIT_GAME" : "退出游戏",
-		"UI_MODS" : "Mods",
-		"UI_HELP" : "帮助",
+		"TEXT_UI_ALERT" : "警报！",
+		"TEXT_UI_ERROR" : "错误！",
+		"TEXT_UI_WARNING" : "警告！",
+		"TEXT_UI_PLEASE_CONFIRM" : "请确认...",
 		
-		"UI_EXIT_GAME_OR_NOT" : "是否退出游戏？"
+		"TEXT_UI_NEW_GAME" : "新建游戏",
+		"TEXT_UI_LOAD_GAME" : "加载游戏",
+		"TEXT_UI_MODS" : "Mods",
+		"TEXT_UI_GAME_SETTINGS" : "游戏设置",
+		"TEXT_UI_HELP" : "帮助",
+		"TEXT_UI_EXIT_GAME" : "退出游戏",
+		
+		"TEXT_UI_EXIT_GAME_OR_NOT" : "是否退出游戏？"
 	}
 }

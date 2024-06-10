@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://interfaces/confirmation_dialog.gd" id="1_xsgun"]
 
 [node name="ConfirmationDialog" type="ConfirmationDialog"]
-title = ""
+title = "TEXT_UI_PLEASE_CONFIRM"
 initial_position = 2
-size = Vector2i(215, 100)
+size = Vector2i(303, 100)
 visible = true
-ok_button_text = "UI_CONFIRM"
-cancel_button_text = "UI_CANCEL"
+ok_button_text = "TEXT_UI_CONFIRM"
+cancel_button_text = "TEXT_UI_CANCEL"
 script = ExtResource("1_xsgun")
 
 [connection signal="canceled" from="." to="." method="_on_canceled"]

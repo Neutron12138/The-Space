@@ -14,51 +14,60 @@ script = ExtResource("1_jdm3r")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 100
-text = "The Space"
+text = "TEXT_GAME_NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="buttons" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
-[node name="mods" type="Button" parent="buttons"]
+[node name="buttons" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "UI_MODS"
+size_flags_vertical = 3
 
-[node name="major" type="VBoxContainer" parent="buttons"]
+[node name="new_game" type="Button" parent="HBoxContainer/buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXT_UI_NEW_GAME"
+
+[node name="load_game" type="Button" parent="HBoxContainer/buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXT_UI_LOAD_GAME"
+
+[node name="mods" type="Button" parent="HBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "TEXT_UI_MODS"
 
-[node name="new_game" type="Button" parent="buttons/major"]
+[node name="game_settings" type="Button" parent="HBoxContainer/buttons"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "UI_NEW_GAME"
+text = "TEXT_UI_GAME_SETTINGS"
 
-[node name="load_game" type="Button" parent="buttons/major"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "UI_LOAD_GAME"
-
-[node name="game_settings" type="Button" parent="buttons/major"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "UI_GAME_SETTINGS"
-
-[node name="exit_game" type="Button" parent="buttons/major"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "UI_EXIT_GAME"
-
-[node name="help" type="Button" parent="buttons"]
+[node name="help" type="Button" parent="HBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "UI_HELP"
+size_flags_vertical = 3
+text = "TEXT_UI_HELP"
 
-[connection signal="pressed" from="buttons/mods" to="." method="_on_mods_pressed"]
-[connection signal="pressed" from="buttons/major/new_game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="buttons/major/load_game" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="buttons/major/game_settings" to="." method="_on_game_settings_pressed"]
-[connection signal="pressed" from="buttons/major/exit_game" to="." method="_on_exit_game_pressed"]
-[connection signal="pressed" from="buttons/help" to="." method="_on_help_pressed"]
+[node name="exit_game" type="Button" parent="HBoxContainer/buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEXT_UI_EXIT_GAME"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[connection signal="pressed" from="HBoxContainer/buttons/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/load_game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/mods" to="." method="_on_mods_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/game_settings" to="." method="_on_game_settings_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/exit_game" to="." method="_on_exit_game_pressed"]

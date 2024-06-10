@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rbl1lcevwqjy"]
+
+[ext_resource type="Script" path="res://core/camera/free_camera_controller.gd" id="1_pex8o"]
+[ext_resource type="Script" path="res://core/event_dispatcher.gd" id="2_3h1e7"]
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="controller" type="Node" parent="Camera3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_pex8o")
+camera = NodePath("..")
+
+[node name="dispatcher" type="Node" parent="Camera3D"]
+script = ExtResource("2_3h1e7")

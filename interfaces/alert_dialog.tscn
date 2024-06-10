@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://interfaces/alert_dialog.gd" id="1_jwbmb"]
 
 [node name="AlertDialog" type="AcceptDialog"]
+title = "TEXT_UI_ALERT"
 initial_position = 2
-size = Vector2i(134, 100)
+size = Vector2i(158, 100)
 visible = true
-ok_button_text = "UI_CONFIRM"
+ok_button_text = "TEXT_UI_CONFIRM"
 script = ExtResource("1_jwbmb")
 
 [connection signal="canceled" from="." to="." method="_on_canceled"]
